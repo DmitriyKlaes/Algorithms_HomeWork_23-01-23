@@ -41,7 +41,7 @@ public class Tree<T extends Comparable<T>> {
     public boolean contains(T value) {
         Node node = this.root;
         while (node != null){
-            if (node.value.equals(value)){
+            if (node.value.compareTo(value) == 0){
                 return true;
             }
             if (node.value.compareTo(value) > 0) {
