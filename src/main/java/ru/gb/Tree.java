@@ -39,8 +39,17 @@ public class Tree<T extends Comparable<T>> {
     }
 
     public boolean contains(T value) {
-        // FIXME: 23.01.2023
-        throw new UnsupportedOperationException();
+        Node node = this.root;
+        while (node != null){
+            if (node.value.equals(value)){
+                return true;
+            }
+            if (node.value.compareTo(value) > 0) {
+                node = node.left;
+            } else {
+                node = node.right;
+            }
+        }
+        return false;
     }
-
 }
